@@ -1,0 +1,434 @@
+
+<h1>Assignment 1</h1>
+<p><em>Deadline: 04/29/2025</em></p>
+<ol>
+<li>
+<p>Please follow the instructions below to install Conda.</p>
+</li>
+<li>
+<p>Get familiar with the Shell-Commands <code>cd</code>, <code>ls</code>, <code>pwd</code> and <code>mkdir</code>.</p>
+</li>
+<li>
+<p>Create a Conda environment called <code>fuki</code> with the packages <code>python=3.10</code>, <code>jupyterlab</code> and tensorflow installed.</p>
+</li>
+<li>
+<p>Launch the jupyter notebook <code>XOR.ipynb</code> and execute the keras script.</p>
+</li>
+</ol>
+<p>All information needed should be available below.</p>
+<p>If you should have any Questions don't hesitate to state them in our Webex-Teams channel!</p>
+
+<h1>Table of Contents</h1>
+<ul>
+<li>
+<p><a href="#conda-installation">Conda Installation</a></p>
+<ul>
+<li>
+<a href="#windows">Windows</a>
+</li>
+<li>
+<a href="#macos">macOS</a>
+</li>
+<li>
+<a href="#linux">Linux</a>
+<ul>
+<li>
+<a href="#download">Download</a>
+</li>
+<li>
+<a href="#installation">Installation</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="#terminal-cheat-sheet">Terminal Cheat Sheet</a></p>
+<ul>
+<li>
+<p><code>ls</code></p>
+</li>
+<li>
+<p><code>pwd</code></p>
+</li>
+<li>
+<p><code>cd</code></p>
+</li>
+<li>
+<p><code>mkdir</code></p>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="#conda-cheat-sheet">Conda Cheat Sheet</a></p>
+<ul>
+<li>
+<p><a href="#creating-an-conda-environment-from-scratch">Creating an Conda environment from scratch</a></p>
+</li>
+<li>
+<p><a href="#installing-packages">Installing packages</a></p>
+</li>
+<li>
+<p><a href="#deleting-environment">Deleting environment</a></p>
+</li>
+<li>
+<p><a href="#creating-a-conda-environment-from-an-environmentyml-file">Creating a conda environment from an environment.yml file</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="#python">Python</a></p>
+<ul>
+<li>
+<p><a href="#launching-python">Launching Python</a></p>
+</li>
+<li>
+<p><a href="#launching-an-python-application">Launching an Python Application</a></p>
+</li>
+</ul>
+</li>
+</ul>
+<h1>Conda Installation</h1>
+<p>We use Python throughout the class. We further use some additional packages, installing them individually can be unnecessarily complicated. Hence, we recommend installing Miniconda, which comes with Python (please use 3.x) and the package manager Conda.</p>
+<p><em>(Note that Conda is a part of the Anaconda distribution. If you are already using the Anaconda distribution you may skip installing Miniconda!)</em></p>
+<h2>Windows</h2>
+<ul>
+<li>
+<p>Visit <a href="https://docs.conda.io/en/latest/miniconda.html">https://docs.conda.io/en/latest/miniconda.html</a></p>
+</li>
+<li>
+<p>Download the installer for Python 3.x, for your OS-Architecture (probably <code>64bit</code>) and run it.</p>
+</li>
+<li>
+<p>You can click on <code>continue</code> in each step.</p>
+</li>
+</ul>
+<p><img src="img/conda-win-installer.png" alt="" /></p>
+<ul>
+<li>
+<p>You should now find two freshly installed programs, in your Start Menu, in the <code>Anaconda3 (64-bit)</code> directory.</p>
+<ul>
+<li>
+<p>Both spawn a terminal window from which the <code>conda</code> command is accessible.</p>
+</li>
+<li>
+<p><strong>Please use the</strong> <code>Anaconda Powershell Prompt</code> <em>(instead of the</em> <code>Anaconda prompt</code>) <strong>, as that one also allows inputting typical commands from the UNIX world (macOS, Linux, etc.).</strong></p>
+</li>
+</ul>
+</li>
+</ul>
+<p><img src="img/conda-win-prompt.png" alt="" /></p>
+<h2>macOS</h2>
+<ul>
+<li>
+<p>Visit <a href="https://docs.conda.io/en/latest/miniconda.html">https://docs.conda.io/en/latest/miniconda.html</a></p>
+</li>
+<li>
+<p>Download the Python 3.x <strong>pkg</strong> installer and run it.</p>
+</li>
+<li>
+<p>You can click on <code>continue</code> in each step.</p>
+</li>
+</ul>
+<p><img src="img/conda-macos-installer.png" alt="" /></p>
+<ul>
+<li>After you completed the installation, with the next start of the Terminal application you will be able to use the <code>conda</code> command.</li>
+</ul>
+<p><img src="img/conda-macos-prompt.png" alt="" /></p>
+<h2>Linux</h2>
+<ul>
+<li>For Linux there is unfortunately no graphical installer available, thus you need to use your terminal.</li>
+</ul>
+<h3>Download</h3>
+<ul>
+<li>
+<p>Open a terminal window and enter the following command:</p>
+<pre><code>wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+
+</code></pre>
+</li>
+<li>
+<p>In case you don't have <code>wget</code> installed, please use the following command instead:</p>
+<pre><code>curl https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh &gt; Miniconda3-latest-Linux-x86_64.sh
+
+</code></pre>
+</li>
+</ul>
+<h3>Installation</h3>
+<ul>
+<li>
+<p>Run the following command to start the installation:</p>
+<pre><code>bash Miniconda3-latest-Linux-x86_64.sh
+
+</code></pre>
+</li>
+<li>
+<p>You will be prompted to press <code>ENTER</code>, do that.</p>
+</li>
+<li>
+<p>Afterwards the EULA will be displayed. Press <code>q</code> to quit reading it.</p>
+</li>
+</ul>
+<p><img src="img/conda-linux-agb.png" alt="" /></p>
+<ul>
+<li>
+<p>Enter <code>yes</code> and confirm with <code>ENTER</code> to accept the terms.</p>
+</li>
+<li>
+<p>Next you will be asked to specify the installation path, press <code>ENTER</code> to use the default one.</p>
+</li>
+<li>
+<p>Now the installer asks whether to initialize <code>miniconda3</code>. <strong>Enter</strong> <code>yes</code> and confirm with <code>ENTER</code></p>
+</li>
+<li>
+<p>After you completed the installation, with the next start of a terminal window you will be able to use the <code>conda</code> command.</p>
+</li>
+</ul>
+<p><img src="img/conda-linux-prompt.png" alt="" /></p>
+<h1>Terminal Cheat Sheet</h1>
+<ul>
+<li>
+<p>Hint: You can paste commands into the terminal using:</p>
+<ul>
+<li>
+<p>Windows: <code>CTRL + V</code></p>
+</li>
+<li>
+<p>macOS: <code>CMD + V</code></p>
+</li>
+<li>
+<p>Linux: <code>CTRL + SHIFT + V</code></p>
+</li>
+</ul>
+</li>
+<li>
+<p>Hint: You can autocomplete commands and arguments using <code>TAB</code>.</p>
+</li>
+<li>
+<p>Hint: You can interrupt command execution using <code>CTRL + C</code> (e.g. if Conda gets stuck)</p>
+</li>
+</ul>
+<h2><code>ls</code></h2>
+<ul>
+<li>
+<p><code>ls</code> lists all files and directories in your current path.</p>
+<pre><code>(base) aleks@pc$ ls
+Desktop Documents Downloads miniconda3 Music Pictures Public Uni Videos
+
+</code></pre>
+</li>
+</ul>
+<h2><code>pwd</code></h2>
+<ul>
+<li>
+<p><code>pwd</code> returns your current path. Very useful if you should get lost!</p>
+<pre><code>(base) aleks@pc$ pwd
+/home/aleks
+
+</code></pre>
+</li>
+</ul>
+<h2><code>cd</code></h2>
+<ul>
+<li>
+<p><code>cd</code> (change directory) moves you into a specified directory</p>
+</li>
+<li>
+<p><code>..</code> states &quot;one directory above&quot;. Thus by using <code>cd ..</code> you can switch to one directory above.</p>
+<pre><code>(base) aleks@pc$ ls
+Desktop Documents Downloads Music Pictures Public Uni Videos
+
+(base) aleks@pc$ pwd
+/home/aleks
+
+(base) aleks@pc$ cd Uni
+(base) aleks@pc$ pwd
+/home/aleks/Uni
+
+(base) aleks@pc$ cd ..
+(base) aleks@pc$ pwd
+/home/aleks
+
+</code></pre>
+</li>
+<li>
+<p>When starting a terminal window your path will be set to your <strong>Home-Directory</strong>. Depending on which Operating System you use the path-names will look different.</p>
+<ul>
+<li>
+<p>Windows (<code>C:\Users\username</code>):</p>
+<pre><code>C:\Users\aleks&gt; pwd
+
+Path
+----
+C:\Users\aleks
+
+</code></pre>
+</li>
+<li>
+<p>macOS (<code>/Users/username</code>):</p>
+<pre><code>aleks@macOS$ pwd
+/Users/aleks
+
+</code></pre>
+</li>
+<li>
+<p>Linux (<code>/home/username</code>):</p>
+<pre><code>aleks@linux$ pwd
+/home/aleks
+
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>Luckily we can use the same command on each OS to get back to our Home-Directory, i.e. <code>cd ~</code> or <code>cd $HOME</code>.</p>
+<pre><code>(base) aleks@pc$ cd aa/bb/cc/dd
+(base) aleks@pc$ cd $HOME
+(base) aleks@pc$ pwd
+/home/aleks
+
+</code></pre>
+</li>
+</ul>
+<h2><code>mkdir</code></h2>
+<ul>
+<li>
+<p><code>mkdir</code> stands for <em>make directory</em>.</p>
+<pre><code>aleks@pc$ ls
+course_a course_b
+
+aleks@pc$ mkdir ML_python
+aleks@pc$ ls
+ML_python course_a course_b
+
+</code></pre>
+</li>
+<li>
+<p>We suggest creating a folder for each lecture/session, e.g.:</p>
+<pre><code>aleks@pc$ pwd
+/home/aleks/Uni/ML_python
+
+aleks@pc$ mkdir 01-2025-04-22
+
+</code></pre>
+</li>
+</ul>
+<p><strong>WARNING</strong></p>
+<ul>
+<li>
+<p>Please make sure to not use spaces when naming files and directories! As the terminal separates arguments between spaces.</p>
+<pre><code>aleks@pc$ mkdir ML python
+aleks@pc$ ls
+course_a course_b ML python
+
+</code></pre>
+</li>
+<li>
+<p>We now have created two different directories!</p>
+</li>
+<li>
+<p>To <code>cd</code> into a directory with spaces in the name, put quotation marks (<code>&quot;</code> or <code>'</code>) around it</p>
+<pre><code>aleks@pc$ ls
+'dir with spaces' dir_a dir_b
+aleks@pc$ cd 'dir with spaces'
+aleks@pc$ pwd
+/home/aleks/dir with spaces
+
+</code></pre>
+</li>
+</ul>
+<h1>Conda Cheat Sheet</h1>
+<ul>
+<li>
+<p>As mentioned before Conda allows us to install Python packages easily, while making sure the package versions work well with another.</p>
+</li>
+<li>
+<p>Conda also allows us to create virtual environments, i.e. a separated collection of packages.</p>
+</li>
+<li>
+<p>The main idea behind that is to save a state in which we are able to run a project. When revisiting a project in the future some packages may have gotten updated, resulting in the project not running at all or in a different manner.
+Keeping an environment per project allows to restart the project with exactly the packages with which it has worked in the past!</p>
+</li>
+<li>
+<p>It is recommended to add the Conda-forge channel to your Conda channels, so we can install community packages:</p>
+<pre><code>conda config --add channels conda-forge
+
+</code></pre>
+</li>
+</ul>
+<h2>Creating an Conda environment from scratch</h2>
+<ul>
+<li>
+<p>Once you have installed the Conda package manager, we create a virtual environment by installing Python and all other packages of interest.</p>
+</li>
+<li>
+<p>Creating an Conda environment with the name <code>fuki</code></p>
+<pre><code>conda create -n fuki
+
+</code></pre>
+</li>
+<li>
+<p>The default Conda environment is <code>base</code>, to switch to the newly created environment use <code>conda activate environment_name</code>:</p>
+<pre><code>(base) aleks@pc$ conda activate fuki
+(fuki) aleks@pc$
+
+</code></pre>
+</li>
+<li>
+<p>After doing this you can see the changed environment in your Shells' prefix.</p>
+</li>
+</ul>
+<h2>Installing packages</h2>
+<ul>
+<li>
+<p>With the right environment activated you can use <code>conda install package_1 package_2 [..]</code> to install packages:</p>
+<pre><code>(fuki) aleks@pc$ conda install python=3.10 jupyterlab tensorflow
+
+</code></pre>
+</li>
+<li>
+<p>Conda will automatically install all packages on which the chosen ones depend.</p>
+</li>
+</ul>
+<h2>Deleting environment</h2>
+<pre><code>conda env remove -n environment_name
+</code></pre>
+<h2>Creating a conda environment from an environment.yml file</h2>
+<p><em>Note: this will be used later in the lecture and is not part of the assignment</em></p>
+<ul>
+<li>
+<p>Once you have installed the Conda package manager, you may create a virtual environment by instructions within a file (e.g. environment.yml). This allows you to recreate an existing environment from another machine.</p>
+</li>
+<li>
+<p>Move to your working directory (use <code>cd</code>) and make sure the environment.yml is available (use <code>ls</code>) and type one of the following command:</p>
+<pre><code>conda env create -f environment.yml
+
+</code></pre>
+</li>
+<li>
+<p>Further you may use the Python module <code>pip</code> for downloading additional packages from PyPi, the Python Package Index.</p>
+</li>
+<li>
+<p>Packaging in Python is still not yet completely free of pain, hence it is recommended to stay - if possible - within one realm (in our case Conda!), when you start to build more complex and sophisticated software.</p>
+</li>
+</ul>
+<h2>Starting Jupyter lab</h2>
+<ul>
+<li>
+<p>You can start Jupyter Lab by typing the command <code>jupyter lab</code> in the anaconda shell:</p>
+<pre><code>(fuki) aleks@pc$ jupyter lab
+
+</code></pre>
+</li>
+</ul>
+<h2>Open the Jupyter Lab Notebook XOR.ipynb and run it</h2>
+<ul>
+<li>
+<p>Use the menu on the leftside to navigate to the location you downloaded the file XOR.ipynb</p>
+<p><img src="img/XOR1.png" alt="" /></p>
+</li>
+<li>
+<p>Launch it using the Play Button on the top or by typing SHIFT-ENTER after selecting the cell:</p>
+<p><img src="img/XOR2.png" alt="" /></p>
+</li>
+</ul>
